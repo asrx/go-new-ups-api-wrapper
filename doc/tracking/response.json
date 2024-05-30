@@ -1,0 +1,217 @@
+{
+    "trackResponse": {
+        "shipment": [
+            {
+                "inquiryNumber": "1ZC1E8120304128073",
+                "package": [
+                    {
+                        "trackingNumber": "1ZC1E8120304128073",
+                        "deliveryDate": [],
+                        "activity": [
+                            {
+                                "location": {
+                                    "address": {},
+                                    "slic": "9170"
+                                },
+                                "status": {
+                                    "type": "X",
+                                    "description": "Your investigation has been closed with a proof of delivery.",
+                                    "code": "UP",
+                                    "statusCode": "127"
+                                },
+                                "date": "20240513",
+                                "time": "110358",
+                                "gmtDate": "20240513",
+                                "gmtOffset": "-04:00",
+                                "gmtTime": "15:03:58"
+                            },
+                            {
+                                "location": {
+                                    "address": {},
+                                    "slic": "9170"
+                                },
+                                "status": {
+                                    "type": "X",
+                                    "description": "We've begun an investigation to locate the package.",
+                                    "code": "UP",
+                                    "statusCode": "129"
+                                },
+                                "date": "20240509",
+                                "time": "221124",
+                                "gmtDate": "20240510",
+                                "gmtOffset": "-04:00",
+                                "gmtTime": "02:11:24"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Ontario",
+                                        "stateProvince": "CA",
+                                        "countryCode": "US",
+                                        "country": "US"
+                                    },
+                                    "slic": "9170"
+                                },
+                                "status": {
+                                    "type": "D",
+                                    "description": "DELIVERED ",
+                                    "code": "KB",
+                                    "statusCode": "011"
+                                },
+                                "date": "20240506",
+                                "time": "150354",
+                                "gmtDate": "20240506",
+                                "gmtOffset": "-07:00",
+                                "gmtTime": "22:03:54"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Ontario",
+                                        "stateProvince": "CA",
+                                        "countryCode": "US",
+                                        "country": "US"
+                                    },
+                                    "slic": "9170"
+                                },
+                                "status": {
+                                    "type": "I",
+                                    "description": "Out For Delivery Today",
+                                    "code": "OT",
+                                    "statusCode": "091"
+                                },
+                                "date": "20240506",
+                                "time": "093014",
+                                "gmtDate": "20240506",
+                                "gmtOffset": "-07:00",
+                                "gmtTime": "16:30:14"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Ontario",
+                                        "stateProvince": "CA",
+                                        "countryCode": "US",
+                                        "country": "US"
+                                    },
+                                    "slic": "9169"
+                                },
+                                "status": {
+                                    "type": "I",
+                                    "description": "Processing at UPS Facility",
+                                    "code": "YP",
+                                    "statusCode": "071"
+                                },
+                                "date": "20240506",
+                                "time": "055003",
+                                "gmtDate": "20240506",
+                                "gmtOffset": "-07:00",
+                                "gmtTime": "12:50:03"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Ontario",
+                                        "stateProvince": "CA",
+                                        "countryCode": "US",
+                                        "country": "US"
+                                    },
+                                    "slic": "9169"
+                                },
+                                "status": {
+                                    "type": "I",
+                                    "description": "We have your package",
+                                    "code": "OR",
+                                    "statusCode": "005"
+                                },
+                                "date": "20240505",
+                                "time": "190226",
+                                "gmtDate": "20240506",
+                                "gmtOffset": "-07:00",
+                                "gmtTime": "02:02:26"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "countryCode": "US",
+                                        "country": "US"
+                                    }
+                                },
+                                "status": {
+                                    "type": "M",
+                                    "description": "Shipper created a label, UPS has not received the package yet. ",
+                                    "code": "MP",
+                                    "statusCode": "003"
+                                },
+                                "date": "20240414",
+                                "time": "223056",
+                                "gmtDate": "20240415",
+                                "gmtOffset": "-07:00",
+                                "gmtTime": "05:30:56"
+                            }
+                        ],
+                        "currentStatus": {
+                            "description": "Investigation Closed",
+                            "code": "127",
+                            "simplifiedTextDescription": "Your investigation has been closed with a proof of delivery."
+                        },
+                        "packageAddress": [
+                            {
+                                "type": "ORIGIN",
+                                "address": {
+                                    "city": "ONTARIO",
+                                    "stateProvince": "CA",
+                                    "countryCode": "US",
+                                    "country": "US"
+                                }
+                            },
+                            {
+                                "type": "DESTINATION",
+                                "address": {
+                                    "city": "RANCHO CUCAMONGA",
+                                    "stateProvince": "CA",
+                                    "countryCode": "US",
+                                    "country": "US"
+                                }
+                            }
+                        ],
+                        "weight": {
+                            "unitOfMeasurement": "LBS",
+                            "weight": "36.00"
+                        },
+                        "service": {
+                            "code": "518",
+                            "levelCode": "003",
+                            "description": "UPS Ground"
+                        },
+                        "referenceNumber": [
+                            {
+                                "type": "SHIPMENT",
+                                "number": "SC240411004"
+                            },
+                            {
+                                "type": "PACKAGE",
+                                "number": "SC240411004"
+                            }
+                        ],
+                        "deliveryInformation": {
+                            "receivedBy": "REC",
+                            "location": "Dock",
+                            "deliveryPhoto": {
+                                "photoCaptureInd": "N",
+                                "isNonPostalCodeCountry": false
+                            }
+                        },
+                        "dimension": {
+                            "height": "13.00",
+                            "length": "22.00",
+                            "width": "16.00",
+                            "unitOfDimension": "IN"
+                        },
+                        "packageCount": 5
+                    }
+                ]
+            }
+        ]
+    }
+}
