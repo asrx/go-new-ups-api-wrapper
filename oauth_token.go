@@ -3,6 +3,7 @@ package go_new_ups_api_wrapper
 import (
 	"encoding/base64"
 	"encoding/json"
+	"errors"
 	"net/http"
 
 	"github.com/idoubi/goz"
@@ -32,16 +33,27 @@ func OauthToken(clientId, clientSecret string, debug bool) (respAuthToken *Respo
 			"grant_type": grantType,
 		},
 	})
+	// 请求验证
 	if err != nil {
 		return nil, err
 	}
-	if response.GetStatusCode() == http.StatusOK {
-
-	}
+	// 获取响应体
 	body, err := response.GetBody()
 	if err != nil {
 		return nil, err
 	}
+
+	// 判断结果
+	if response.GetStatusCode() != http.StatusOK {
+		respErr := &ResponseErr{}
+		err = json.Unmarshal([]byte(body.String()), respErr)
+		if err != nil {
+			return nil, err
+		}
+		return nil, errors.New(respErr.Response.Errors[0].Message)
+	}
+
+	// 返回响应结构体
 	resp := &ResponseAuthToken{}
 	err = json.Unmarshal([]byte(body.String()), resp)
 	if err != nil {
@@ -50,6 +62,7 @@ func OauthToken(clientId, clientSecret string, debug bool) (respAuthToken *Respo
 	return resp, nil
 }
 
+// 认证响应体
 type ResponseAuthToken struct {
 	TokenType   string `json:"token_type" doc:"类型"`
 	IssuedAt    string `json:"issued_at" doc:"签发时间"`

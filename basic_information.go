@@ -13,3 +13,13 @@ func getHeaders(authorization string) map[string]interface{} {
 		"Authorization": authorization,
 	}
 }
+
+// 错误响应
+type ResponseErr struct {
+	Response struct {
+		Errors []struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"errors"`
+	} `json:"response"`
+}

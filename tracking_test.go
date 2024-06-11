@@ -1,0 +1,23 @@
+package go_new_ups_api_wrapper
+
+import (
+	"encoding/json"
+	"fmt"
+	"testing"
+)
+
+func TestTracking(t *testing.T) {
+	token := "eyJraWQiOiI2NGM0YjYyMC0yZmFhLTQzNTYtYjA0MS1mM2EwZjM2Y2MxZmEiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJzdWIiOiJ3b3M5MTc2MUBnbWFpbC5jb20iLCJjbGllbnRpZCI6Im4xNkN1ZUpMOGpuc3VYdDQyNVMxdnNxUk9Uc2lETGNhdjdoUVRFbU9RQWpRbGE4QSIsImlzcyI6Imh0dHBzOi8vYXBpcy51cHMuY29tIiwidXVpZCI6IjI3NTlBMzIwLUFENzMtMTk1Mi04NEQ5LUMyNEEzODIxODQ5NSIsInNpZCI6IjY0YzRiNjIwLTJmYWEtNDM1Ni1iMDQxLWYzYTBmMzZjYzFmYSIsImF1ZCI6IlJhdGluZyIsImF0IjoiVVQyZ0pDR3RvT1Q2MEdiMGlpZWRsV0xydWZXMCIsIm5iZiI6MTcxNzA2MTI3NSwiRGlzcGxheU5hbWUiOiJDQS1PTlRBUklPIiwiZXhwIjoxNzE3MDc1Njc1LCJpYXQiOjE3MTcwNjEyNzUsImp0aSI6IjlkNTIwYjBiLWM1MjEtNDQ3Yy1iZGJjLTRhZmY5YTMwMWIxMSJ9.ZgYz7p6MJvLp0unmIq_TC4evQODa94wuALS4XHnEalPLBb5A3xJTMbf3B72GvCHCryj-JWtBKoX5kmSYj01EhRypnp06wjW-57ebgaWNcaHvVp4kpIwn3KB6u-EDd-KaQUvGOaUZGILKG0Q72DbbX1nqhunCQRKWRpSzzpQ3HLf6ssmOKZ3nMrhrbPZU_TRdbrc8dIhkjP51lM4kvxWLYXXoSiS7ljZAXoWg0lMF8cCcGfrrm86C-fPObqakIFNFEkDKMvtJr8C4PuD57a9qlhbddu9cPr0jEP-jNPAv7qm7S2fkTe0H3mtDlSt10HJ89VKLmTP0WOy885Lw08mYH70sw2W3bqmd-H2Rp9PBzy-GAsoDY1N9L3JtT7GFLokZkBMecVNqTSH053YOjKsKxn4f2_WyFegLYBYXoQcTFPx0joUxT43p1y9oGjmIaucIc7qvfPH-2qDMcQX4tPiBSY6rKficYi9xPdZpgaRD5n-BKkcmtjdfF7IdE4-QiyVU_XX7fmVoA2mvxMn80dBA1-sR-VVRjVbOr6tT5-531DF0heg7PTIzsMO7oVGt3HBDaWUPcSbGpx6UPtx4xf3K3sX3bp4fnCuUqbqfHkWK-LZwn5DpowZ9Goeth72fpGNjSjv3dW9j99Vi-a4j9tzXcFveN0B8RTAsOT9Wttf5Atg"
+	tracksId := "1ZC1E8120304128073"
+	tracking, err := Tracking(token, tracksId, true)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	data, err := json.Marshal(tracking)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(string(data))
+}

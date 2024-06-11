@@ -8,6 +8,7 @@ require (
 	github.com/basgys/goxml2json v1.1.0 // indirect
 	github.com/idoubi/goutils v1.1.0 // indirect
 	github.com/launchdarkly/eventsource v1.7.1 // indirect
+	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/tidwall/gjson v1.14.3 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
