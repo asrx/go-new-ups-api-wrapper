@@ -1,0 +1,106 @@
+{
+  "ShipmentRequest": {
+    "Request": {
+      "requestOption": "Shoptimeintransit",
+      "SubVersion": "1701",
+      "TransactionReference": {
+        "CustomerContext": ""
+      }
+    },
+    "Shipment": {
+      "Shipper": {
+        "Name": "ANL",
+        "AttentionName": "Donovan",
+        "ShipperNumber": "XY3554",
+        "Address": {
+          "AddressLine": [
+            "2440 S. Milliken Avenue"
+          ],
+          "City": "Ontario",
+          "StateProvinceCode": "CA",
+          "PostalCode": "91761",
+          "CountryCode": "US"
+        },
+        "Phone": {
+          "Number": "6262258083"
+        },
+        "EMailAddress": "donovan.xu@longyuan-sh.com"
+      },
+      "ShipTo": {
+        "Name": "Lori",
+        "AttentionName": "Lori.zhou",
+        "Address": {
+          "AddressLine": [
+            "2250 Roswell Dr #200"
+          ],
+          "City": "Pittsburgh",
+          "StateProvinceCode": "PA",
+          "PostalCode": "15205",
+          "CountryCode": "US"
+        },
+        "Phone": {
+          "Number": "8000000000"
+        },
+        "EMailAddress": "lori.zhou@longyuan-sh.com"
+      },
+      "ShipFrom": {
+        "Name": "ANL",
+        "AttentionName": "Donovan",
+        "Address": {
+          "AddressLine": [
+            "2440 S. Milliken Avenue"
+          ],
+          "City": "Ontario",
+          "StateProvinceCode": "CA",
+          "PostalCode": "91761",
+          "CountryCode": "US"
+        },
+        "Phone": {
+          "Number": "6262258083"
+        },
+        "EMailAddress": "donovan.xu@longyuan-sh.com"
+      },
+      "PaymentInformation": {
+        "ShipmentCharge": {
+          "Type": "01",
+          "BillShipper": {
+            "AccountNumber": "XY3554"
+          }
+        }
+      },
+      "Service": {
+        "Code": "03",
+        "Description": "Ground"
+      },
+      "ShipmentRatingOptions": {
+        "NegotiatedRatesIndicator": "Y",
+        "RateChartIndicator": "Y"
+      },
+      "Package": [
+        {
+          "Description": "",
+          "Packaging": {
+            "Code": "02",
+            "Description": "Package"
+          },
+          "Dimensions": {
+            "UnitOfMeasurement": {
+              "Code": "IN",
+              "Description": "Inches"
+            },
+            "Length": "16",
+            "Width": "13",
+            "Height": "10"
+          },
+          "PackageWeight": {
+            "UnitOfMeasurement": {
+              "Code": "LBS",
+              "Description": "Pounds"
+            },
+            "Weight": "30"
+          }
+        }
+      ]
+    }
+  }
+}

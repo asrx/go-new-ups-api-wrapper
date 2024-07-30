@@ -1,0 +1,24 @@
+{
+  "VoidShipmentResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "1",
+        "Description": "Success"
+      },
+      "Alert": {
+        "Code": "",
+        "Description": ""
+      },
+      "TransactionReference": {
+        "CustomerContext": ""
+      }
+    },
+    "SummaryResult": {
+      "Status": {
+        "Code": "1",
+        "Description": "Voided"
+      }
+    },
+    "PackageLevelResult": null
+  }
+}
