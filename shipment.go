@@ -54,14 +54,15 @@ func buildShipRequest(shipper pojo.Contact, shipTo pojo.Contact, shipFrom pojo.C
 				SubVersion:    SubVersion,
 			},
 			Shipment: &pojo.Shipment{
-				Shipper:                shipper,
-				ShipTo:                 shipTo,
-				ShipFrom:               shipFrom,
-				PaymentInformation:     pojo.NewPaymentDetails(shipper.ShipperNumber),
-				Service:                pojo.Service03_Ground(),
-				ShipmentRatingOptions:  pojo.NewShipmentRatingOptions(),
-				Package:                packages,
-				ShipmentServiceOptions: &pojo.ShipmentServiceOptions{},
+				Shipper:                        shipper,
+				ShipTo:                         shipTo,
+				ShipFrom:                       shipFrom,
+				PaymentInformation:             pojo.NewPaymentDetails(shipper.ShipperNumber),
+				Service:                        pojo.Service03_Ground(),
+				ShipmentRatingOptions:          pojo.NewShipmentRatingOptions(),
+				RatingMethodRequestedIndicator: "Y",
+				Package:                        packages,
+				ShipmentServiceOptions:         &pojo.ShipmentServiceOptions{},
 			},
 			LabelSpecification: pojo.NewLabelSpecificationGif(),
 			// LabelSpecification: pojo.NewLabelSpecificationZPL(),
@@ -72,6 +73,7 @@ func buildShipRequest(shipper pojo.Contact, shipTo pojo.Contact, shipFrom pojo.C
 	if strings.ToUpper(serviceType) == pojo.UPS_GFP {
 		reqShip.Shipment.ShipmentRatingOptions.FRSShipmentIndicator = "Y"
 		reqShip.Shipment.FRSPaymentInformation = pojo.NewFRSPaymentInformationGFP(shipper.ShipperNumber)
+		reqShip.Shipment.PaymentInformation = nil
 	}
 	return reqShip
 }
@@ -79,12 +81,11 @@ func buildShipRequest(shipper pojo.Contact, shipTo pojo.Contact, shipFrom pojo.C
 func shipmentDo(reqShip *pojo.RequestShipping, header *pojo.RequestHeader, debug bool) (*pojo.RespShipment, error) {
 	var headerMap map[string]interface{}
 	mapstructure.Decode(header, &headerMap)
-	marshal, _ := json.Marshal(reqShip)
 
-	fmt.Println("------------------")
-	fmt.Println(string(marshal))
-	fmt.Println("------------------")
 	url := getRequestUrl(shipmentUrl+reqShip.ShipTo.City, debug)
+
+	marshal, _ := json.Marshal(reqShip)
+	fmt.Println(string(marshal))
 
 	jsonStr, err := HttpPost(url, headerMap, reqShip)
 	if err != nil {

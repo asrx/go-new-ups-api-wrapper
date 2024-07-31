@@ -24,7 +24,7 @@ func TestRatingGround(t *testing.T) {
 func TestRatingGFP(t *testing.T) {
 	packages := getRateGfpPkgs()
 
-	_, err := Rating(token, shipper, shipFrom, shipTo, packages, pojo.UPS_GFP, false)
+	_, err := Rating(token, shipper, shipFrom, shipTo, packages, pojo.UPS_GFP, debug)
 	if err != nil {
 		fmt.Printf("Rating is error: %s\n", err.Error())
 		return

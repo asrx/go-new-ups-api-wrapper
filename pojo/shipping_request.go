@@ -11,17 +11,18 @@ type ShipmentRequest struct {
 }
 
 type Shipment struct {
-	Description             string          `json:"Description,omitempty"`
-	Shipper                 Contact         `json:"Shipper"`
-	ShipTo                  Contact         `json:"ShipTo"`
-	ShipFrom                Contact         `json:"ShipFrom,omitempty"`
-	PaymentInformation      *PaymentDetails `json:"PaymentInformation"`
-	*FRSPaymentInformation  `json:"FRSPaymentInformation,omitempty"`
-	*Service                `json:"Service"`
-	*ShipmentRatingOptions  `json:"ShipmentRatingOptions"`
-	Package                 []*ShipPackage `json:"Package"`
-	*ReturnService          `json:"ReturnService,omitempty"`
-	*ShipmentServiceOptions `json:"ShipmentServiceOptions,omitempty"`
+	Description                    string          `json:"Description,omitempty"`
+	Shipper                        Contact         `json:"Shipper"`
+	ShipTo                         Contact         `json:"ShipTo"`
+	ShipFrom                       Contact         `json:"ShipFrom,omitempty"`
+	PaymentInformation             *PaymentDetails `json:"PaymentInformation"`
+	*FRSPaymentInformation         `json:"FRSPaymentInformation,omitempty"`
+	*Service                       `json:"Service"`
+	*ShipmentRatingOptions         `json:"ShipmentRatingOptions"`
+	RatingMethodRequestedIndicator string         `json:"RatingMethodRequestedIndicator,omitempty"`
+	Package                        []*ShipPackage `json:"Package"`
+	*ReturnService                 `json:"ReturnService,omitempty"`
+	*ShipmentServiceOptions        `json:"ShipmentServiceOptions,omitempty"`
 	//
 }
 

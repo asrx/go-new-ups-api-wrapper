@@ -70,16 +70,39 @@ type RespShipment struct {
 					MonetaryValue string `json:"MonetaryValue"`
 					SubType       string `json:"SubType,omitempty"`
 				} `json:"ItemizedCharges"`
+				NegotiatedCharges struct {
+					BaseServiceCharge struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"BaseServiceCharge"`
+					TransportationCharges struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"TransportationCharges"`
+					ServiceOptionsCharges struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"ServiceOptionsCharges"`
+					TotalCharge struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"TotalCharge"`
+					ItemizedCharges []struct {
+						Code          string `json:"Code"`
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"ItemizedCharges"`
+				} `json:"NegotiatedCharges"`
 				ShippingReceipt struct {
 					ImageFormat struct {
 						Code        string `json:"Code"`
 						Description string `json:"Description"`
 					} `json:"ImageFormat"`
 					GraphicImage string `json:"GraphicImage"`
-				} `json:"ShippingReceipt"`
+				} `json:"ShippingReceipt,omitempty"`
 			} `json:"PackageResults"`
-			LabelURL   string `json:"LabelURL"`
-			ReceiptURL string `json:"ReceiptURL"`
+			LabelURL   string `json:"LabelURL,omitempty"`
+			ReceiptURL string `json:"ReceiptURL,omitempty "`
 		} `json:"ShipmentResults"`
 	} `json:"ShipmentResponse"`
 }

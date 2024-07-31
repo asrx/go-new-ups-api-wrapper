@@ -21,8 +21,8 @@ type RateShipment struct {
 	*Service                `json:"Service"`
 	*ShipmentServiceOptions `json:"ShipmentServiceOptions,omitempty"`
 	// Array of objects (Rate_Shipment_Package) <= 200
-	Package []*RatePackage `json:"Package"`
-	// RatingMethodRequestedIndicator string         `json:"RatingMethodRequestedIndicator,omitempty"`
+	Package                        []*RatePackage `json:"Package"`
+	RatingMethodRequestedIndicator string         `json:"RatingMethodRequestedIndicator,omitempty"`
 	// TaxInformationIndicator        string         `json:"TaxInformationIndicator,omitempty"`
 	// WWEShipmentIndicator           string         `json:"WWEShipmentIndicator,omitempty"`
 }

@@ -23,14 +23,14 @@ func Rating(token string, shipper, shipFrom, shipTo pojo.Contact, packages []*po
 				SubVersion:    SubVersion,
 			},
 			RateShipment: &pojo.RateShipment{
-				Shipper:               shipper,
-				ShipTo:                shipTo,
-				ShipFrom:              shipFrom,
-				PaymentDetails:        pojo.NewPaymentDetails(shipper.ShipperNumber),
-				ShipmentRatingOptions: pojo.NewShipmentRatingOptions(),
-				Service:               pojo.Service03_Ground(),
-				Package:               packages,
-				// RatingMethodRequestedIndicator: "Y",
+				Shipper:                        shipper,
+				ShipTo:                         shipTo,
+				ShipFrom:                       shipFrom,
+				PaymentDetails:                 pojo.NewPaymentDetails(shipper.ShipperNumber),
+				ShipmentRatingOptions:          pojo.NewShipmentRatingOptions(),
+				Service:                        pojo.Service03_Ground(),
+				Package:                        packages,
+				RatingMethodRequestedIndicator: "Y",
 				// TaxInformationIndicator:        "Y",
 				// PromotionalDiscountInformation: "Y",
 				// MasterCartonIndicator: "Y",
@@ -50,6 +50,7 @@ func Rating(token string, shipper, shipFrom, shipTo pojo.Contact, packages []*po
 	if err != nil {
 		return nil, err
 	}
+
 	rate := &pojo.RespRate{}
 	err = json.Unmarshal([]byte(jsonStr), rate)
 	if err != nil {

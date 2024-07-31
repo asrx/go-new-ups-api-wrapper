@@ -11,7 +11,7 @@
       "Shipper": {
         "Name": "ANL",
         "AttentionName": "Donovan",
-        "ShipperNumber": "XY3554",
+        "ShipperNumber": "XXXXX",
         "Address": {
           "AddressLine": [
             "2440 S. Milliken Avenue"
@@ -64,7 +64,7 @@
         "ShipmentCharge": {
           "Type": "01",
           "BillShipper": {
-            "AccountNumber": "XY3554"
+            "AccountNumber": "XXXXX"
           }
         }
       },

@@ -10,6 +10,10 @@ import (
 
 const trackingUrl = "/api/track/v1/details/"
 
+/*
+	/api/track/v1/details/{inquiryNumber}?locale=en_US&returnSignature=false&returnMilestones=false&returnPOD=false
+*/
+
 func Tracking(token string, TransId string, debug bool) (*pojo.RespTracking, error) {
 	reqT := &pojo.RequestTracking{
 		Locale:           "en_US",
@@ -26,7 +30,20 @@ func Tracking(token string, TransId string, debug bool) (*pojo.RespTracking, err
 		TransId:        TransId,
 		TransactionSrc: _src, // testing, client
 	}
-	jsonStr, err := trackingDo(reqT, reqH, debug)
+	return trackingDo(reqT, reqH, debug)
+}
+
+func trackingDo(reqTracking *pojo.RequestTracking, header *pojo.RequestHeader, debug bool) (*pojo.RespTracking, error) {
+	var trackMap map[string]interface{}
+	var headerMap map[string]interface{}
+
+	mapstructure.Decode(reqTracking, &trackMap)
+	mapstructure.Decode(header, &headerMap)
+
+	url := getRequestUrl(trackingUrl+header.TransId, debug)
+
+	jsonStr, err := HttpGet(url, headerMap, trackMap)
+
 	if err != nil {
 		return nil, err
 	}
@@ -36,16 +53,4 @@ func Tracking(token string, TransId string, debug bool) (*pojo.RespTracking, err
 		return nil, err
 	}
 	return track, nil
-}
-
-func trackingDo(reqTracking *pojo.RequestTracking, header *pojo.RequestHeader, debug bool) (string, error) {
-	var trackMap map[string]interface{}
-	var headerMap map[string]interface{}
-
-	mapstructure.Decode(reqTracking, &trackMap)
-	mapstructure.Decode(header, &headerMap)
-
-	url := getRequestUrl(trackingUrl+header.TransId, debug)
-
-	return HttpGet(url, headerMap, trackMap)
 }
