@@ -81,6 +81,29 @@ type RespRate struct {
 					CurrencyCode  string `json:"CurrencyCode"`
 					MonetaryValue string `json:"MonetaryValue"`
 				} `json:"TotalCharges"`
+				NegotiatedCharges struct {
+					BaseServiceCharge struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"BaseServiceCharge"`
+					TransportationCharges struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"TransportationCharges"`
+					ServiceOptionsCharges struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"ServiceOptionsCharges"`
+					TotalCharge struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"TotalCharge"`
+					ItemizedCharges []struct {
+						Code          string `json:"Code"`
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"ItemizedCharges"`
+				} `json:"NegotiatedCharges"`
 				Weight        string `json:"Weight"`
 				BillingWeight struct {
 					UnitOfMeasurement struct {
