@@ -38,7 +38,26 @@ type RespShipment struct {
 					MonetaryValue string `json:"MonetaryValue"`
 				} `json:"TotalCharge"`
 			} `json:"NegotiatedRateCharges"`
-			BillingWeight struct {
+			FRSShipmentData struct {
+				TransportationCharges struct {
+					GrossCharge struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"GrossCharge"`
+					DiscountAmount struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"DiscountAmount"`
+					DiscountPercentage string `json:"DiscountPercentage"`
+					NetCharge          struct {
+						CurrencyCode  string `json:"CurrencyCode"`
+						MonetaryValue string `json:"MonetaryValue"`
+					} `json:"NetCharge"`
+				} `json:"TransportationCharges"`
+			} `json:"FRSShipmentData"`
+			RatingMethod                    string `json:"RatingMethod"`
+			BillableWeightCalculationMethod string `json:"BillableWeightCalculationMethod"`
+			BillingWeight                   struct {
 				UnitOfMeasurement struct {
 					Code        string `json:"Code"`
 					Description string `json:"Description"`

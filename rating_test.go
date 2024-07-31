@@ -14,7 +14,7 @@ func TestRatingGround(t *testing.T) {
 
 	rating, err := Rating(token, shipper, shipFrom, shipTo, packages, pojo.UPS_GROUND, debug)
 	if err != nil {
-		fmt.Printf("Rating is error: %s\n", err.Error())
+		fmt.Printf("Rating Ground is error: %s\n", err.Error())
 		return
 	}
 	data, _ := json.Marshal(rating)
@@ -24,11 +24,13 @@ func TestRatingGround(t *testing.T) {
 func TestRatingGFP(t *testing.T) {
 	packages := getRateGfpPkgs()
 
-	_, err := Rating(token, shipper, shipFrom, shipTo, packages, pojo.UPS_GFP, debug)
+	rating, err := Rating(token, shipper, shipFrom, shipTo, packages, pojo.UPS_GFP, debug)
 	if err != nil {
-		fmt.Printf("Rating is error: %s\n", err.Error())
+		fmt.Printf("Rating GFP is error: %s\n", err.Error())
 		return
 	}
+	data, _ := json.Marshal(rating)
+	fmt.Println(string(data))
 }
 
 func TestRatingHundredWeight(t *testing.T) {
@@ -57,7 +59,7 @@ func getRateGroundPkgs() []*pojo.RatePackage {
 	return packages
 }
 func getRateGfpPkgs() []*pojo.RatePackage {
-	packageCount := 20
+	packageCount := 3
 
 	packages := make([]*pojo.RatePackage, 0)
 	weight := "30"
@@ -69,7 +71,7 @@ func getRateGfpPkgs() []*pojo.RatePackage {
 	unitWeight := pojo.NewUnitWeight()
 
 	declaredValue := ""
-	signatureServiceFlag := true
+	signatureServiceFlag := false
 	for i := 0; i < packageCount; i++ {
 		p := pojo.BuildRatePackage(weight, length, width, height, pkgType, unitDis, unitWeight, declaredValue, signatureServiceFlag)
 		p.Commodity = pojo.NewCommodity50()
