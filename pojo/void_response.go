@@ -1,29 +1,29 @@
 package pojo
 
 type RespVoid struct {
-	VoidShipmentResponse struct {
-		Response struct {
-			ResponseStatus struct {
+	VoidShipmentResponse *struct {
+		Response *struct {
+			ResponseStatus *struct {
 				Code        string `json:"Code"`
 				Description string `json:"Description"`
 			} `json:"ResponseStatus"`
-			Alert struct {
+			Alert *struct {
 				Code        string `json:"Code"`
 				Description string `json:"Description"`
 			} `json:"Alert"`
-			TransactionReference struct {
+			TransactionReference *struct {
 				CustomerContext string `json:"CustomerContext"`
 			} `json:"TransactionReference"`
 		} `json:"Response"`
-		SummaryResult struct {
-			Status struct {
+		SummaryResult *struct {
+			Status *struct {
 				Code        string `json:"Code"`
 				Description string `json:"Description"`
 			} `json:"Status"`
 		} `json:"SummaryResult"`
-		PackageLevelResult []struct {
+		PackageLevelResult []*struct {
 			TrackingNumber string `json:"TrackingNumber"`
-			Status         struct {
+			Status         *struct {
 				Code        string `json:"Code"`
 				Description string `json:"Description"`
 			} `json:"Status"`

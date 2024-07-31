@@ -1,265 +1,130 @@
 package pojo
 
 type RespRate struct {
-	RateResponse struct {
-		Response struct {
-			ResponseStatus struct {
+	RateResponse *struct {
+		Response *struct {
+			ResponseStatus *struct {
 				Code        string `json:"Code"`
 				Description string `json:"Description"`
 			} `json:"ResponseStatus"`
-			Alert []struct {
+			Alert []*struct {
 				Code        string `json:"Code"`
 				Description string `json:"Description"`
 			} `json:"Alert"`
-			TransactionReference struct {
+			TransactionReference *struct {
 				CustomerContext string `json:"CustomerContext"`
 			} `json:"TransactionReference"`
 		} `json:"Response"`
-		RatedShipment struct {
-			Service struct {
+		RatedShipment *struct {
+			Service *struct {
 				Code        string `json:"Code"`
 				Description string `json:"Description"`
 			} `json:"Service"`
 			RateChart          string `json:"RateChart"`
-			RatedShipmentAlert []struct {
+			RatedShipmentAlert []*struct {
 				Code        string `json:"Code"`
 				Description string `json:"Description"`
 			} `json:"RatedShipmentAlert"`
 			RatingMethod                    string `json:"RatingMethod"`
 			BillableWeightCalculationMethod string `json:"BillableWeightCalculationMethod"`
-			BillingWeight                   struct {
-				UnitOfMeasurement struct {
+			BillingWeight                   *struct {
+				UnitOfMeasurement *struct {
 					Code        string `json:"Code"`
 					Description string `json:"Description"`
 				} `json:"UnitOfMeasurement"`
 				Weight string `json:"Weight"`
 			} `json:"BillingWeight"`
-			TransportationCharges struct {
+			TransportationCharges *struct {
 				CurrencyCode  string `json:"CurrencyCode"`
 				MonetaryValue string `json:"MonetaryValue"`
 			} `json:"TransportationCharges"`
-			BaseServiceCharge struct {
+			BaseServiceCharge *struct {
 				CurrencyCode  string `json:"CurrencyCode"`
 				MonetaryValue string `json:"MonetaryValue"`
 			} `json:"BaseServiceCharge"`
-			FRSShipmentData struct {
-				TransportationCharges struct {
-					GrossCharge struct {
+			FRSShipmentData *struct {
+				TransportationCharges *struct {
+					GrossCharge *struct {
 						CurrencyCode  string `json:"CurrencyCode"`
 						MonetaryValue string `json:"MonetaryValue"`
 					} `json:"GrossCharge"`
-					DiscountAmount struct {
+					DiscountAmount *struct {
 						CurrencyCode  string `json:"CurrencyCode"`
 						MonetaryValue string `json:"MonetaryValue"`
 					} `json:"DiscountAmount"`
 					DiscountPercentage string `json:"DiscountPercentage"`
-					NetCharge          struct {
+					NetCharge          *struct {
 						CurrencyCode  string `json:"CurrencyCode"`
 						MonetaryValue string `json:"MonetaryValue"`
 					} `json:"NetCharge"`
 				} `json:"TransportationCharges"`
 			} `json:"FRSShipmentData"`
-			ServiceOptionsCharges struct {
+			ServiceOptionsCharges *struct {
 				CurrencyCode  string `json:"CurrencyCode"`
 				MonetaryValue string `json:"MonetaryValue"`
 			} `json:"ServiceOptionsCharges"`
-			TotalCharges struct {
+			TotalCharges *struct {
 				CurrencyCode  string `json:"CurrencyCode"`
 				MonetaryValue string `json:"MonetaryValue"`
 			} `json:"TotalCharges"`
-			NegotiatedRateCharges struct {
-				BaseServiceCharge struct {
+			NegotiatedRateCharges *struct {
+				BaseServiceCharge *struct {
 					CurrencyCode  string `json:"CurrencyCode"`
 					MonetaryValue string `json:"MonetaryValue"`
 				} `json:"BaseServiceCharge"`
-				TotalCharge struct {
+				TotalCharge *struct {
 					CurrencyCode  string `json:"CurrencyCode"`
 					MonetaryValue string `json:"MonetaryValue"`
 				} `json:"TotalCharge"`
 			} `json:"NegotiatedRateCharges"`
-			RatedPackage []struct {
-				TransportationCharges struct {
+			RatedPackage []*struct {
+				TransportationCharges *struct {
 					CurrencyCode  string `json:"CurrencyCode"`
 					MonetaryValue string `json:"MonetaryValue"`
 				} `json:"TransportationCharges"`
-				BaseServiceCharge struct {
+				BaseServiceCharge *struct {
 					CurrencyCode  string `json:"CurrencyCode"`
 					MonetaryValue string `json:"MonetaryValue"`
 				} `json:"BaseServiceCharge"`
-				ServiceOptionsCharges struct {
+				ServiceOptionsCharges *struct {
 					CurrencyCode  string `json:"CurrencyCode"`
 					MonetaryValue string `json:"MonetaryValue"`
 				} `json:"ServiceOptionsCharges"`
-				ItemizedCharges []struct {
+				ItemizedCharges []*struct {
 					Code          string `json:"Code"`
 					CurrencyCode  string `json:"CurrencyCode"`
 					MonetaryValue string `json:"MonetaryValue"`
 					SubType       string `json:"SubType,omitempty"`
 				} `json:"ItemizedCharges"`
-				TotalCharges struct {
+				TotalCharges *struct {
 					CurrencyCode  string `json:"CurrencyCode"`
 					MonetaryValue string `json:"MonetaryValue"`
 				} `json:"TotalCharges"`
-				NegotiatedCharges struct {
-					BaseServiceCharge struct {
+				NegotiatedCharges *struct {
+					BaseServiceCharge *struct {
 						CurrencyCode  string `json:"CurrencyCode"`
 						MonetaryValue string `json:"MonetaryValue"`
 					} `json:"BaseServiceCharge"`
-					TransportationCharges struct {
+					TransportationCharges *struct {
 						CurrencyCode  string `json:"CurrencyCode"`
 						MonetaryValue string `json:"MonetaryValue"`
 					} `json:"TransportationCharges"`
-					ServiceOptionsCharges struct {
+					ServiceOptionsCharges *struct {
 						CurrencyCode  string `json:"CurrencyCode"`
 						MonetaryValue string `json:"MonetaryValue"`
 					} `json:"ServiceOptionsCharges"`
-					TotalCharge struct {
+					TotalCharge *struct {
 						CurrencyCode  string `json:"CurrencyCode"`
 						MonetaryValue string `json:"MonetaryValue"`
 					} `json:"TotalCharge"`
-					ItemizedCharges []struct {
+					ItemizedCharges []*struct {
 						Code          string `json:"Code"`
 						CurrencyCode  string `json:"CurrencyCode"`
 						MonetaryValue string `json:"MonetaryValue"`
 					} `json:"ItemizedCharges"`
 				} `json:"NegotiatedCharges"`
 				Weight        string `json:"Weight"`
-				BillingWeight struct {
-					UnitOfMeasurement struct {
-						Code        string `json:"Code"`
-						Description string `json:"Description"`
-					} `json:"UnitOfMeasurement"`
-					Weight string `json:"Weight"`
-				} `json:"BillingWeight"`
-			} `json:"RatedPackage"`
-		} `json:"RatedShipment"`
-	} `json:"RateResponse"`
-}
-
-type T struct {
-	RateResponse struct {
-		Response struct {
-			ResponseStatus struct {
-				Code        string `json:"Code"`
-				Description string `json:"Description"`
-			} `json:"ResponseStatus"`
-			Alert []struct {
-				Code        string `json:"Code"`
-				Description string `json:"Description"`
-			} `json:"Alert"`
-			TransactionReference struct {
-				CustomerContext string `json:"CustomerContext"`
-			} `json:"TransactionReference"`
-		} `json:"Response"`
-		RatedShipment struct {
-			Service struct {
-				Code        string `json:"Code"`
-				Description string `json:"Description"`
-			} `json:"Service"`
-			RateChart          string `json:"RateChart"`
-			RatedShipmentAlert []struct {
-				Code        string `json:"Code"`
-				Description string `json:"Description"`
-			} `json:"RatedShipmentAlert"`
-			RatingMethod                    string `json:"RatingMethod"`
-			BillableWeightCalculationMethod string `json:"BillableWeightCalculationMethod"`
-			BillingWeight                   struct {
-				UnitOfMeasurement struct {
-					Code        string `json:"Code"`
-					Description string `json:"Description"`
-				} `json:"UnitOfMeasurement"`
-				Weight string `json:"Weight"`
-			} `json:"BillingWeight"`
-			TransportationCharges struct {
-				CurrencyCode  string `json:"CurrencyCode"`
-				MonetaryValue string `json:"MonetaryValue"`
-			} `json:"TransportationCharges"`
-			BaseServiceCharge struct {
-				CurrencyCode  string `json:"CurrencyCode"`
-				MonetaryValue string `json:"MonetaryValue"`
-			} `json:"BaseServiceCharge"`
-			FRSShipmentData struct {
-				TransportationCharges struct {
-					GrossCharge struct {
-						CurrencyCode  string `json:"CurrencyCode"`
-						MonetaryValue string `json:"MonetaryValue"`
-					} `json:"GrossCharge"`
-					DiscountAmount struct {
-						CurrencyCode  string `json:"CurrencyCode"`
-						MonetaryValue string `json:"MonetaryValue"`
-					} `json:"DiscountAmount"`
-					DiscountPercentage string `json:"DiscountPercentage"`
-					NetCharge          struct {
-						CurrencyCode  string `json:"CurrencyCode"`
-						MonetaryValue string `json:"MonetaryValue"`
-					} `json:"NetCharge"`
-				} `json:"TransportationCharges"`
-			} `json:"FRSShipmentData"`
-			ServiceOptionsCharges struct {
-				CurrencyCode  string `json:"CurrencyCode"`
-				MonetaryValue string `json:"MonetaryValue"`
-			} `json:"ServiceOptionsCharges"`
-			TotalCharges struct {
-				CurrencyCode  string `json:"CurrencyCode"`
-				MonetaryValue string `json:"MonetaryValue"`
-			} `json:"TotalCharges"`
-			NegotiatedRateCharges struct {
-				BaseServiceCharge struct {
-					CurrencyCode  string `json:"CurrencyCode"`
-					MonetaryValue string `json:"MonetaryValue"`
-				} `json:"BaseServiceCharge"`
-				TotalCharge struct {
-					CurrencyCode  string `json:"CurrencyCode"`
-					MonetaryValue string `json:"MonetaryValue"`
-				} `json:"TotalCharge"`
-			} `json:"NegotiatedRateCharges"`
-			RatedPackage []struct {
-				TransportationCharges struct {
-					CurrencyCode  string `json:"CurrencyCode"`
-					MonetaryValue string `json:"MonetaryValue"`
-				} `json:"TransportationCharges"`
-				BaseServiceCharge struct {
-					CurrencyCode  string `json:"CurrencyCode"`
-					MonetaryValue string `json:"MonetaryValue"`
-				} `json:"BaseServiceCharge"`
-				ServiceOptionsCharges struct {
-					CurrencyCode  string `json:"CurrencyCode"`
-					MonetaryValue string `json:"MonetaryValue"`
-				} `json:"ServiceOptionsCharges"`
-				ItemizedCharges []struct {
-					Code          string `json:"Code"`
-					CurrencyCode  string `json:"CurrencyCode"`
-					MonetaryValue string `json:"MonetaryValue"`
-				} `json:"ItemizedCharges"`
-				TotalCharges struct {
-					CurrencyCode  string `json:"CurrencyCode"`
-					MonetaryValue string `json:"MonetaryValue"`
-				} `json:"TotalCharges"`
-				NegotiatedCharges struct {
-					BaseServiceCharge struct {
-						CurrencyCode  string `json:"CurrencyCode"`
-						MonetaryValue string `json:"MonetaryValue"`
-					} `json:"BaseServiceCharge"`
-					TransportationCharges struct {
-						CurrencyCode  string `json:"CurrencyCode"`
-						MonetaryValue string `json:"MonetaryValue"`
-					} `json:"TransportationCharges"`
-					ServiceOptionsCharges struct {
-						CurrencyCode  string `json:"CurrencyCode"`
-						MonetaryValue string `json:"MonetaryValue"`
-					} `json:"ServiceOptionsCharges"`
-					TotalCharge struct {
-						CurrencyCode  string `json:"CurrencyCode"`
-						MonetaryValue string `json:"MonetaryValue"`
-					} `json:"TotalCharge"`
-					ItemizedCharges []struct {
-						Code          string `json:"Code"`
-						CurrencyCode  string `json:"CurrencyCode"`
-						MonetaryValue string `json:"MonetaryValue"`
-					} `json:"ItemizedCharges"`
-				} `json:"NegotiatedCharges"`
-				Weight        string `json:"Weight"`
-				BillingWeight struct {
+				BillingWeight *struct {
 					UnitOfMeasurement struct {
 						Code        string `json:"Code"`
 						Description string `json:"Description"`
