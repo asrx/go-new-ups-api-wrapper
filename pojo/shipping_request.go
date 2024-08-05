@@ -68,6 +68,9 @@ func NewReferenceNumbers(value ...string) []*ReferenceNumber {
 	referenceNumbers := make([]*ReferenceNumber, 0)
 	code := ""
 	for i, v := range value {
+		if v == "" {
+			continue
+		}
 		if i == 0 {
 			code = "PC"
 		} else {
