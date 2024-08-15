@@ -23,6 +23,13 @@ func TestShipment(t *testing.T) {
 	fmt.Println(string(data))
 }
 
+func TestDebugShipment(t *testing.T) {
+	reqH := &pojo.RequestHeader{
+		Authorization: Bearer + token,
+	}
+	shipmentDo(nil, reqH, false)
+}
+
 func TestShipmentGFP(t *testing.T) {
 
 	packages := getShipGfpPkg()

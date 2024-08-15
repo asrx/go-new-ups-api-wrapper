@@ -2,7 +2,6 @@ package go_new_ups_api_wrapper
 
 import (
 	"encoding/json"
-	"fmt"
 	"strings"
 
 	"github.com/mitchellh/mapstructure"
@@ -10,7 +9,8 @@ import (
 	"github.com/asrx/go-new-ups-api-wrapper/pojo"
 )
 
-const shipmentUrl = "/api/shipments/v2403/ship?additionaladdressvalidation="
+// const shipmentUrl = "/api/shipments/v2403/ship?additionaladdressvalidation="
+const shipmentUrl = "/api/shipments/v2403/ship"
 
 const labelRecoveryUrl = "/labels/{version}/recovery"
 
@@ -82,12 +82,13 @@ func shipmentDo(reqShip *pojo.RequestShipping, header *pojo.RequestHeader, debug
 	var headerMap map[string]interface{}
 	mapstructure.Decode(header, &headerMap)
 
-	url := getRequestUrl(shipmentUrl+reqShip.ShipTo.City, debug)
+	var reqParams map[string]interface{}
+	mapstructure.Decode(reqShip, &reqParams)
 
-	marshal, _ := json.Marshal(reqShip)
-	fmt.Println(string(marshal))
+	// url := getRequestUrl(shipmentUrl+reqShip.ShipTo.City, debug)
+	url := getRequestUrl(shipmentUrl, debug)
 
-	jsonStr, err := HttpPost(url, headerMap, reqShip)
+	jsonStr, err := HttpPost(url, headerMap, reqParams)
 	if err != nil {
 		return nil, err
 	}

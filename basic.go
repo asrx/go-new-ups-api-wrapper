@@ -107,7 +107,7 @@ func HttpPost(url string, headerMap map[string]interface{}, params interface{}) 
 	if err != nil {
 		return "", err
 	}
-
+	// fmt.Println(body.String())
 	// 判断结果
 	if response.GetStatusCode() != http.StatusOK {
 		respErr := &ResponseErr{}
