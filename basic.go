@@ -48,7 +48,7 @@ func getRequestUrl(targetUrl string, debug bool) string {
 func HttpGet(url string, headerMap, params map[string]interface{}) (string, error) {
 	client := goz.NewClient()
 	response, err := client.Get(url, goz.Options{
-		Timeout: 3000,
+		// Timeout: 3000,
 		// Query:        nil,
 		Headers: headerMap,
 		// Cookies:      nil,
@@ -87,7 +87,7 @@ func HttpGet(url string, headerMap, params map[string]interface{}) (string, erro
 func HttpPost(url string, headerMap map[string]interface{}, params interface{}) (string, error) {
 	client := goz.NewClient()
 	response, err := client.Post(url, goz.Options{
-		Timeout: 3000,
+		// Timeout: 3000,
 		// Query:        nil,
 		Headers: headerMap,
 		// Cookies:      nil,
@@ -130,7 +130,7 @@ func HttpPost(url string, headerMap map[string]interface{}, params interface{}) 
 func HttpDelete(url string, headerMap map[string]interface{}, params interface{}) (string, error) {
 	client := goz.NewClient()
 	response, err := client.Delete(url, goz.Options{
-		Timeout: 3000,
+		// Timeout: 3000,
 		// Query:        nil,
 		Headers: headerMap,
 		// Cookies:      nil,
