@@ -21,12 +21,13 @@ type RespVoid struct {
 				Description string `json:"Description"`
 			} `json:"Status"`
 		} `json:"SummaryResult"`
-		PackageLevelResult []*struct {
-			TrackingNumber string `json:"TrackingNumber"`
-			Status         *struct {
-				Code        string `json:"Code"`
-				Description string `json:"Description"`
-			} `json:"Status"`
-		} `json:"PackageLevelResult"`
+		PackageLevelResult interface{} `json:"PackageLevelResult"`
+		// []*struct {
+		// 	TrackingNumber string `json:"TrackingNumber"`
+		// 	Status         *struct {
+		// 		Code        string `json:"Code"`
+		// 		Description string `json:"Description"`
+		// 	} `json:"Status"`
+		// } `json:"PackageLevelResult"`
 	} `json:"VoidShipmentResponse"`
 }
