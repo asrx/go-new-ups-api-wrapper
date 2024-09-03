@@ -11,9 +11,9 @@ type RespRate struct {
 				Code        string `json:"Code"`
 				Description string `json:"Description"`
 			} `json:"Alert"`
-			TransactionReference *struct {
-				CustomerContext string `json:"CustomerContext"`
-			} `json:"TransactionReference"`
+			// TransactionReference *struct {
+			// 	CustomerContext string `json:"CustomerContext,omitempty"`
+			// } `json:"TransactionReference,omitempty"`
 		} `json:"Response"`
 		RatedShipment *struct {
 			Service *struct {

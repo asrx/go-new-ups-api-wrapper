@@ -84,6 +84,8 @@ type ShipmentRatingOptions struct {
 	FRSShipmentIndicator string `json:"FRSShipmentIndicator,omitempty"`
 	// 费率表指示器 - 如果请求中存在，响应将包含RateChart元素。
 	RateChartIndicator string `json:"RateChartIndicator,omitempty"`
+	// TPFC协商价格指标仅适用于第三方/运费到付货物。
+	// TPFCNegotiatedRatesIndicator string `json:"TPFCNegotiatedRatesIndicator,omitempty"`
 }
 
 func NewShipmentRatingOptions() *ShipmentRatingOptions {
